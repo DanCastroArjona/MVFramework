@@ -27,7 +27,8 @@ namespace MVFramework.Installer
             _controllers = controllers;
             _presenters = presenters;
             
-            Install();
+            InstallSignals();
+            InstallComponents();
         }
 
         protected void InstallModel(IModel model) 
@@ -123,7 +124,8 @@ namespace MVFramework.Installer
             UninstallModels();
         }
         
-        protected abstract void Install();
+        protected abstract void InstallSignals();
+        protected abstract void InstallComponents();
         public abstract void Uninstall();
     }
 }
