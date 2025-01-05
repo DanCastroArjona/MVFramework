@@ -14,6 +14,11 @@ namespace MVFramework.Views
         {
             return GlobalContext.Instance.GetController<T>();
         }
+        
+        public T GetPresenter<T>() where T : class, IPresenter
+        {
+            return GlobalContext.Instance.GetPresenter<T>();
+        }
 
         public T GetScriptable<T>() where T : ScriptableObject
         {
