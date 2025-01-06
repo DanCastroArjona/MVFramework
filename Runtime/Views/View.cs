@@ -1,6 +1,7 @@
 ﻿using System;
 using MVFramework.Contexts;
 using MVFramework.Controllers.Interfaces;
+using MVFramework.Presenters.Interfaces;
 using MVFramework.Signals;
 using MVFramework.Signals.Types;
 using MVFramework.Views.Interfaces;
