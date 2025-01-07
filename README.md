@@ -37,6 +37,40 @@ This framework allows you to effectively separate concerns, making your codebase
 
 ---
 
+## How It Works
+
+MVFramework enforces the MVC or MVP design patterns, ensuring a clear separation of concerns and streamlined communication between components. Here's an overview of its core components:
+
+### Core Components
+
+#### **GlobalContext**
+- Acts as a singleton hub for managing dependencies across the application.
+- Provides centralized access to:
+  - **Models**: Represent data and logic.
+  - **Controllers**: Connect logic between Models and Views.
+  - **Presenters**: Mediate logic between Views and Models (specific to MVP).
+  - **ScriptableObjects**: Reusable assets or configurations.
+- Automatically initializes at application startup.
+
+#### **SceneContext**
+- Handles scene-specific dependencies.
+- Registers Models, Controllers, and Presenters with the `GlobalContext` when the scene is loaded.
+- Cleans up and unregisters dependencies when the scene is destroyed.
+
+#### **Installer**
+- A `ScriptableObject` used to register Models, Controllers, Presenters, and Signals.
+- Provides modular and reusable dependency configurations.
+- Ensures clean installation and uninstallation of components.
+
+#### **Signals**
+- A messaging system for decoupled communication between components.
+- Types of signals:
+  - **UserSignals**: Handle user-driven events.
+  - **UpdateSignals**: Notify updates in Views or Models.
+  - **ActionSignals**: Handle general-purpose actions within the app.
+
+---
+
 ## Resources
 
 - **Test Project**: [MVFramework Test Project](https://github.com/DanCastroArjona/MVFrameworkTest)
